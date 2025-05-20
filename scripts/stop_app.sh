@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# Stop the Flask service if it's running
+# Stop Gunicorn service gracefully
 sudo systemctl stop flaskapp || true
 
-# Remove previous app files to prevent CodeDeploy copy errors
-rm -rf /home/ec2-user/flask-portfolio/*
+# Remove all app contents including root-owned venv
+sudo rm -rf /home/ec2-user/flask-portfolio/*
 
