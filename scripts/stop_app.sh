@@ -1,10 +1,12 @@
 #!/bin/bash
 
-# Stop the Gunicorn service
+# Stop Gunicorn safely
 sudo systemctl stop flaskapp || true
 
-# 🧹 Clean virtual environment FIRST
-sudo rm -rf /home/ec2-user/flask-portfolio/venv
+# Remove only app files/folders we know are safe to clear
+sudo rm -rf /home/ec2-user/flask-portfolio/application.py
+sudo rm -rf /home/ec2-user/flask-portfolio/templates
+sudo rm -rf /home/ec2-user/flask-portfolio/static
+sudo rm -rf /home/ec2-user/flask-portfolio/requirements.txt
+sudo rm -rf /home/ec2-user/flask-portfolio/scripts
 
-# 🧹 Then remove all remaining app files
-sudo rm -rf /home/ec2-user/flask-portfolio/*
