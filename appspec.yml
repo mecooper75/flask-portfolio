@@ -1,3 +1,10 @@
+version: 0.0
+os: linux
+
+files:
+  - source: /
+    destination: /home/ec2-user/flask-portfolio-new
+
 hooks:
   ApplicationStop:
     - location: scripts/purge_venv.sh
