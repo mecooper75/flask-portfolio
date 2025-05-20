@@ -3,10 +3,7 @@ set -e
 
 cd /home/ec2-user/flask-portfolio
 
-# Remove old virtual environment
-rm -rf venv
-
-# Set up and activate virtual environment
+# Set up and activate new virtual environment
 python3 -m venv venv
 source venv/bin/activate
 
