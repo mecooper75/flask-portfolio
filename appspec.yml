@@ -1,10 +1,8 @@
-version: 0.0
-os: linux
-files:
-  - source: /
-    destination: /home/ec2-user/flask-portfolio
-
 hooks:
+  ApplicationStop:
+    - location: scripts/purge_venv.sh
+      timeout: 30
+      runas: ec2-user
   BeforeInstall:
     - location: scripts/stop_app.sh
       timeout: 20
@@ -17,3 +15,4 @@ hooks:
     - location: scripts/start_app.sh
       timeout: 60
       runas: ec2-user
+
